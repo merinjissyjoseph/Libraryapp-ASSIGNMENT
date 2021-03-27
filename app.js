@@ -17,12 +17,12 @@ const nav= [
     {link:'/newauthor',name:'Add new Author'},
     {link:'/logout',name:'Logout'},
 ];
-const signupRouter=require('./src/routes/signupRoutes')(nav1);
-const loginRouter=require('./src/routes/loginRoutes')(nav1);
-const booksRouter=require('./src/routes/bookRoutes')(nav);
-const authorsRouter=require('./src/routes/authorRoutes')(nav);
-const newbookRouter=require('./src/routes/newbookRoutes')(nav);
-const newauthorRouter=require('./src/routes/newauthorRoutes')(nav);
+const signupRouter=require('./routes/signupRoutes')(nav1);
+const loginRouter=require('./routes/loginRoutes')(nav1);
+const booksRouter=require('./routes/bookRoutes')(nav);
+const authorsRouter=require('./routes/authorRoutes')(nav);
+const newbookRouter=require('./routes/newbookRoutes')(nav);
+const newauthorRouter=require('./routes/newauthorRoutes')(nav);
 app.use(express.static('./public'));
 
 app.use('/signup',signupRouter);
