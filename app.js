@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
-const port=process.env.port||2000; 
+const port=process.env.port||3000; 
 // const bodyParser = require('body-parser')
 
 // app.use(bodyParser.json())
@@ -17,12 +17,12 @@ const nav= [
     {link:'/newauthor',name:'Add new Author'},
     {link:'/logout',name:'Logout'},
 ];
-const signupRouter=require('./routes/signupRoutes')(nav1);
-const loginRouter=require('./routes/loginRoutes')(nav1);
-const booksRouter=require('./routes/bookRoutes')(nav);
-const authorsRouter=require('./routes/authorRoutes')(nav);
-const newbookRouter=require('./routes/newbookRoutes')(nav);
-const newauthorRouter=require('./routes/newauthorRoutes')(nav);
+const signupRouter=require('./src/routes/signupRoutes')(nav1);
+const loginRouter=require('./src//routes/loginRoutes')(nav1);
+const booksRouter=require('./src/routes/bookRoutes')(nav);
+const authorsRouter=require('./src/routes/authorRoutes')(nav);
+const newbookRouter=require('./src/routes/newbookRoutes')(nav);
+const newauthorRouter=require('./src/routes/newauthorRoutes')(nav);
 app.use(express.static('./public'));
 
 app.use('/signup',signupRouter);
